@@ -33,7 +33,7 @@
           on {{post.date}}
           <!-- TODO: Only show delete button if user id is 1 (admin user) -->
           {% if current_user.id == post.author_id or current_user.id == 1 %}
-          <a href="{{url_for('delete_post', post_id=post.id) }}">✘</a>
+          <a href="{{url_for('delete_post', post_id=post.id) }}" onclick="return confirm('Are you sure you wnat to delete this post?');">✘</a>
           {% endif %}
         </p>
       </div>
